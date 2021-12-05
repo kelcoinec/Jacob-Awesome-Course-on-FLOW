@@ -17,7 +17,9 @@ A script does not cost any money and it won’t change the data on blockchain bu
 
 
 Chapter 1 - Day 2 - The Flow Blockchain & Cadence
+
 1.	What are the 5 Cadence Programming Language Pillars?
+
 Safety and Security: It makes smart contract secure by separation between contracts and transactions
 Clarity: Its code is easy to read by allowing the developer to express their intentions directly so that users can verify it is safe. 
 Approachability: The way Cadence is written is very familiar to other programming languages like Swift and Rust, making it easy to transition to if you have prior experience.
