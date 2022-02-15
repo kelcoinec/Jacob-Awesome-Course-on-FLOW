@@ -49,5 +49,27 @@ Chapter 2 - Day 2 - Transactions and Scripts
 <img width="1106" alt="Number Script" src="https://user-images.githubusercontent.com/71143903/154001250-672e2bee-69a3-4084-b5b9-06e076c22787.png">
 
 
+Chapter 2 Day 3 Arrays, Dictionaries, and Optionals
+<img width="1091" alt="People Script" src="https://user-images.githubusercontent.com/71143903/154068408-43856a9f-ef37-4f65-ac01-062cbc008616.png">
+<img width="1101" alt="SocialMedia Script" src="https://user-images.githubusercontent.com/71143903/154068425-97fc8bef-abbf-4897-970c-aee87c6d699c.png">
+
+
+3.1 The force-unwrap operator will remove the optional type, like the example below that Int? is an optional(either Int or nil).
+var name1: Int? = 123
+var unwrappedName1: Int = name1! 
+
+3.2 The force-unwrap operator will abort the program if it encountered nil, like the example below that Int? is equal to nil.
+var name2: Int? = nil
+var unwrappedName2: Int = name2! 
+
+4.1 The error message means that this script was expected to return a type String (”Three”) but instead it got a type optional String? (“Three” or nil)
+
+4.1 The reason why we’re getting this error is because when we access elements of a dictionary, it returns the value as an optional that is String? (“Three” or nil)
+
+4.3 Adding a force-unwrap operator after return thing[0x03], like this:
+pub fun main(): String {
+    let thing: {Address: String} = {0x01: “One”, 0x02: “Two”, 0x03: “Three”}
+    return thing[0x03]!
+![image](https://user-images.githubusercontent.com/71143903/154068352-5d3788c7-1d31-42e6-bb05-1d578a78a7f1.png)
 
 
