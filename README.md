@@ -70,6 +70,6 @@ var unwrappedName2: Int = name2!
 pub fun main(): String {
     let thing: {Address: String} = {0x01: “One”, 0x02: “Two”, 0x03: “Three”}
     return thing[0x03]!
-![image](https://user-images.githubusercontent.com/71143903/154068352-5d3788c7-1d31-42e6-bb05-1d578a78a7f1.png)
+
 
 
