@@ -50,4 +50,4 @@ Chapter 2 - Day 2 - Transactions and Scripts
 
 
 
-3.	Only prepare phase can access the data in an account, but execute phase can call functions and change the data on the blockchain. Prepare phase can do that all but it’s better to separate into prepare and execute phrases for clearer logic.
+
