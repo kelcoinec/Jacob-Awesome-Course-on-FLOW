@@ -121,3 +121,8 @@ pub contract Test {
         return <- myJacob // there is 1 here, added <- before myJacob
     }
 }
+
+Chapter 3 Day 2 Resources in Dictionaries & Arrays
+1. Write your own smart contract that contains two state variables: an array of resources, and a dictionary of resources. Add functions to remove and add to each of them. They must be different from the examples above.
+
+<img width="1717" alt="CH3D2Q1" src="https://user-images.githubusercontent.com/99885292/158131214-b3187d31-a823-4ae0-877f-f18bf6e84083.png">
