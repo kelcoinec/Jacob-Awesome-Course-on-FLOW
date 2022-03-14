@@ -83,5 +83,41 @@ Chapter 2 Day 4 Basic Structs
 5. Add a script to read the Struct you defined.
 <img width="1721" alt="CH2D4Q5" src="https://user-images.githubusercontent.com/99885292/158117645-c3061e72-cdc1-4fb9-8e17-115287b8bc39.png">
 
+Chapter 3 Day 1 Resources
+1. In words, list 3 reasons why structs are different from resources.
 
+Resources cannot be copied, lost/overwritten and created outside of the contract; while structs can.
 
+2. Describe a situation where a resource might be better to use than a struct.
+
+When we're buying or selling a NFT worth billions of dollars, we don't want to suffer from a careless mistake that the developer might make. The requirement of handling resources extremely explicit would help avoid such careless mistakes.
+
+3. What is the keyword to make a new resource?
+
+create
+
+4. Can a resource be created in a script or transaction (assuming there isn't a public function to create one)?
+
+No
+
+5. What is the type of the resource below?
+
+@Jacob
+
+6. Let's play the "I Spy" game from when we were kids. I Spy 4 things wrong with this code. Please fix them.
+
+pub contract Test {
+
+    // Hint: There's nothing wrong here ;)
+    pub resource Jacob {
+        pub let rocks: Bool
+        init() {
+            self.rocks = true
+        }
+    }
+
+    pub fun createJacob(): @Jacob { // there is 1 here, added @ before Jacob
+        let myJacob <- create Jacob() // there are 2 here, changed = to <- and added create before Jacob()
+        return <- myJacob // there is 1 here, added <- before myJacob
+    }
+}
