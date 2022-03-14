@@ -77,10 +77,10 @@ Chapter 2 Day 4 Basic Structs
 3. Create a function to add to that array/dictionary.
 <img width="1711" alt="CH2D4Q1-3" src="https://user-images.githubusercontent.com/99885292/158117608-d2cdf480-b6c0-44be-8eb5-318adc0c255d.png">
 
-4.Add a transaction to call that function in step 3.
+4. Add a transaction to call that function in step 3.
 <img width="1721" alt="CH2D4Q4" src="https://user-images.githubusercontent.com/99885292/158117624-fa282a0d-4d9f-4928-b651-dc4cd898a0a0.png">
 
-Add a script to read the Struct you defined.
+5. Add a script to read the Struct you defined.
 <img width="1721" alt="CH2D4Q5" src="https://user-images.githubusercontent.com/99885292/158117645-c3061e72-cdc1-4fb9-8e17-115287b8bc39.png">
 
 
