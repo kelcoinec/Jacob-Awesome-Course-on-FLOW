@@ -140,3 +140,20 @@ Chapter 3 Day 3 References
 3. Explain, in your own words, why references can be useful in Cadence.
 
 It opens up the possibility that we can call function in the resource without moving it around or even though we don't have that resource, reducing the risk of exposing to a hack.
+
+Chapter 3 Day 4 Resource/Struct Interfaces
+
+1. Explain, in your own words, the 2 things resource interfaces can be used for (we went over both in today's content)
+
+Firstly, it specifies a set of requirements for resources or struct to implement; Secondly, it allows you to only expose certain variables or functions to certain people.
+
+
+2. Define your own contract. Make your own resource interface and a resource that implements the interface. Create 2 functions. In the 1st function, show an example of not restricting the type of the resource and accessing its content. In the 2nd function, show an example of restricting the type of the resource and NOT being able to access its content.
+
+<img width="1109" alt="CH3D4Q2" src="https://user-images.githubusercontent.com/99885292/158642756-ab204cb8-7285-4360-a9c0-783a90e2ec51.png">
+
+3. How would we fix this code?
+
+<img width="1108" alt="CH3D4Q3" src="https://user-images.githubusercontent.com/99885292/158642770-4b414e94-ba93-4cd1-b51c-651ddc42ebae.png">
+
+
