@@ -126,3 +126,17 @@ Chapter 3 Day 2 Resources in Dictionaries & Arrays
 1. Write your own smart contract that contains two state variables: an array of resources, and a dictionary of resources. Add functions to remove and add to each of them. They must be different from the examples above.
 
 <img width="1717" alt="CH3D2Q1" src="https://user-images.githubusercontent.com/99885292/158131214-b3187d31-a823-4ae0-877f-f18bf6e84083.png">
+
+Chapter 3 Day 3 References
+
+1. Define your own contract that stores a dictionary of resources. Add a function to get a reference to one of the resources in the dictionary.
+
+<img width="1106" alt="CH3D3Q1" src="https://user-images.githubusercontent.com/99885292/158598802-45882e1c-c9b9-4b96-b3aa-85751c7f9748.png">
+
+2. Create a script that reads information from that resource using the reference from the function you defined in part 1.
+
+<img width="1116" alt="CH3D3Q2" src="https://user-images.githubusercontent.com/99885292/158598838-843b2c8b-0fe9-4edb-a75d-7c3e47accb6a.png">
+
+3. Explain, in your own words, why references can be useful in Cadence.
+
+It opens up the possibility that we can call function in the resource without moving it around or even though we don't have that resource, reducing the risk of exposing to a hack.
