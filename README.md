@@ -231,6 +231,7 @@ Chapter 4 Day 1 Account Storage
 1. Explain what lives inside of an account.
  
 i. Contract Code which all contracts we deploy lives inside of an account.
+
 ii. Account Storage which all data we store lives inside of an account.
 
 2. What is the difference between the /storage/, /public/, and /private/ paths?
@@ -263,10 +264,13 @@ It's because I'm too smart not to grant you any access to my AuthAccount which i
 
 6. Define a contract that returns a resource that has at least 1 field in it. Then, write 2 transactions:
 
+<img width="1073" alt="CH4D1Q6a" src="https://user-images.githubusercontent.com/99885292/158738660-8ab66b3c-0bd4-4de5-9137-12086e8c06c0.png">
+
 i. A transaction that first saves the resource to account storage, then loads it out of account storage, logs a field inside the resource, and destroys it.
 
-
+<img width="1075" alt="CH4D1Q6b" src="https://user-images.githubusercontent.com/99885292/158738682-9a9bac3e-6e54-464e-8a24-5088db4269be.png">
 
 ii. A transaction that first saves the resource to account storage, then borrows a reference to it, and logs a field inside the resource.
 
+<img width="1063" alt="CH4D1Q6c" src="https://user-images.githubusercontent.com/99885292/158738706-80b38f4b-d371-4b10-97fe-c345ce7ccfb7.png">
 
