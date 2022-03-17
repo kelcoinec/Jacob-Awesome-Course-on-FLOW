@@ -4,7 +4,7 @@ Chapter 1 - Day 1 - Learning Blockchain Concepts
 
 1.	Explain what the Blockchain is in your own words. 
 
-Blockchain is an open, decentralized, shared database that allows anyone to store stuff publically. Anyone can interact with it with approval and it belongs to nobody that everyone can store information or view the data on it. 
+Blockchain is an open, decentralized, shared database that allows anyone to store stuff publicly. Anyone can interact with it with approval and it belongs to nobody that everyone can store information or view the data on it. 
 
 2.	Explain what a Smart Contract is. 
 
@@ -26,7 +26,7 @@ Clarity: Its code is easy to read by allowing the developer to express their int
 
 Approachability: The way Cadence is written is very familiar to other programming languages like Swift and Rust, making it easy to transition to if you have prior experience.
 
-Developer Experience: Cadence let developer debug in an easy mamner by making error messages very clear.
+Developer Experience: Cadence let developer debug in an easy manner by making error messages very clear.
 
 Resource Oriented Programming: Resources are a composite data type, similar to a struct, that expresses direct ownership of assets. Cadence’s resources directly tie an asset’s ownership to the account that owns it by saving the resource in the account’s storage. As a result, ownership isn’t centralized in a smart contract’s storage, but each account owns its assets. 
 
@@ -160,7 +160,7 @@ Chapter 3 Day 5 Access Control
 
 ***Area 1***
 
-Read & Write (varibles):
+Read & Write (variables):
 
 pub(set) var a: String
 
@@ -180,11 +180,11 @@ access(self) fun privateFunc() {}
 
 ***Area 2***
 
-Read & Write (varibles):
+Read & Write (variables):
 
 pub(set) var a: String
 
-Read Only (varibles):
+Read Only (variables):
 
 pub var b: String
 
@@ -198,11 +198,11 @@ access(contract) fun contractFunc() {}
 
 ***Area 3***
 
-Read & Write (varibles):
+Read & Write (variables):
 
 pub(set) var a: String
 
-Read Only (varibles):
+Read Only (variables):
 
 pub var b: String
 
@@ -216,7 +216,7 @@ access(contract) fun contractFunc() {}
 
 ***Area 4***
 
-Read Only (varibles):
+Read Only (variables):
 
 pub(set) var a: String
 
@@ -308,7 +308,7 @@ Chapter 4 Day 3 Creating an NFT Contract: Collections (Part 1/3)
 
 Firstly, we want to store more than a single resource in an efficient and manageable way instead of saving them in lots of different storage paths.
 
-Secondly, we want not only the account owner(A) but also other people to be able to deposit an NFT to the account storage(A's) that we can transfer an NFT when we combines deposit function with withthdraw function.
+Secondly, we want not only the account owner(A) but also other people to be able to deposit an NFT to the account storage(A's) that we can transfer an NFT when we combines deposit function with withdraw function.
 
 2. What do you have to do if you have resources "nested" inside of another resource? ("Nested resources")
 
