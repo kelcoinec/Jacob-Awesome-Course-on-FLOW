@@ -274,3 +274,29 @@ ii. A transaction that first saves the resource to account storage, then borrows
 
 <img width="1063" alt="CH4D1Q6c" src="https://user-images.githubusercontent.com/99885292/158738706-80b38f4b-d371-4b10-97fe-c345ce7ccfb7.png">
 
+Chapter 4 Day 2 Capabilities
+
+1. What does .link() do?
+
+It creates a capability that points the resource in storage to the public or private paths.
+
+2. In your own words (no code), explain how we can use resource interfaces to only expose certain things to the /public/ path.
+
+Firstly, we add the variables or functions that we'd like to expose to the resource interface; then we use .link() to create a capability that points the resource in storage to the public path.
+
+3. Deploy a contract that contains a resource that implements a resource interface. Then, do the following:
+
+<img width="1076" alt="CH4D2Q3" src="https://user-images.githubusercontent.com/99885292/158765865-fa494f17-94ad-424c-aa99-7233a97877e9.png">
+
+
+i. In a transaction, save the resource to storage and link it to the public with the restrictive interface.
+
+<img width="1070" alt="CH4D2Q3i" src="https://user-images.githubusercontent.com/99885292/158765912-53a28102-ba14-4680-a08d-adfef131c44d.png">
+
+ii. Run a script that tries to access a non-exposed field in the resource interface, and see the error pop up.
+
+<img width="1074" alt="CH4D@Q3ii" src="https://user-images.githubusercontent.com/99885292/158766010-2891769c-0a79-452e-99b5-90a834c25f62.png">
+
+iii. Run the script and access something you CAN read from. Return it from the script.
+
+<img width="1074" alt="CH4D2Q3iii" src="https://user-images.githubusercontent.com/99885292/158766016-7d09834e-b79b-4294-b744-fa68ab9b5fa9.png">
