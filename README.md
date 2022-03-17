@@ -282,7 +282,7 @@ It creates a capability that points the resource in storage to the public or pri
 
 2. In your own words (no code), explain how we can use resource interfaces to only expose certain things to the /public/ path.
 
-Firstly, we add the variables or functions that we'd like to expose to the resource interface; then we use .link() to create a capability that points the resource in storage to the public path.
+Firstly, we add the variables or functions that we'd like to expose to a resource interface; then we use .link() to create a capability that points the resource in storage, which have implemented the resource interface, to the public path.
 
 3. Deploy a contract that contains a resource that implements a resource interface. Then, do the following:
 
