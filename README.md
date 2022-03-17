@@ -300,3 +300,26 @@ ii. Run a script that tries to access a non-exposed field in the resource interf
 iii. Run the script and access something you CAN read from. Return it from the script.
 
 <img width="1074" alt="CH4D2Q3iii" src="https://user-images.githubusercontent.com/99885292/158766016-7d09834e-b79b-4294-b744-fa68ab9b5fa9.png">
+
+
+Chapter 4 Day 3 Creating an NFT Contract: Collections (Part 1/3)
+
+1. Why did we add a Collection to this contract? List the two main reasons.
+
+Firstly, we want to store more than a single resource in an efficient and manageable way instead of saving them in lots of different storage paths.
+
+Secondly, we want not only the account owner(A) but also other people to be able to deposit an NFT to the account storage(A's) that we can transfer an NFT when we combines deposit function with withthdraw function.
+
+2. What do you have to do if you have resources "nested" inside of another resource? ("Nested resources")
+
+We should have defined a destroy function and we must declare a destroy function that manually destroys those "nested" resources with the destroy keyword.
+
+3. Brainstorm some extra things we may want to add to this contract. Think about what might be problematic with this contract and how we could fix it.
+
+Idea #1: Do we really want everyone to be able to mint an NFT? (insert thinking emoji here).
+
+In fact, most projects would have a whitelist to give certain people access to mint an NFT or an admin could mint the NFT and send them to certain people. Apart from adopting Emerald Gateway(released soon by Emerald City) to determine the whitelist, we can delegate the minting function to a resource which only the admin can mint when the contract is deployed.
+
+Idea #2: If we want to read information about our NFTs inside our Collection, right now we have to take it out of the Collection to do so. Is this good?
+
+It's never good because it's not safe. We should use borrow function to get a reference to the NFT so that it'd stay in our Collection yet public can read information about it.
