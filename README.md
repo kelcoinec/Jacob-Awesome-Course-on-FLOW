@@ -157,46 +157,71 @@ Firstly, it specifies a set of requirements for resources or struct to implement
 <img width="1108" alt="CH3D4Q3" src="https://user-images.githubusercontent.com/99885292/158642770-4b414e94-ba93-4cd1-b51c-651ddc42ebae.png">
 
 Chapter 3 Day 5 Access Control
+
 ***Area 1***
+
 Read & Write (varibles):
+
 pub(set) var a: String
+
 pub var b: String
+
 access(contract) var c: String
+
 access(self) var d: String
 
 Call functions:
+
 pub fun publicFunc() {}
+
 access(contract) fun contractFunc() {}
+
 access(self) fun privateFunc() {}
 
 ***Area 2***
+
 Read & Write (varibles):
+
 pub(set) var a: String
 
 Read Only (varibles):
+
 pub var b: String
+
 access(contract) var c: String
 
 Call functions:
+
 pub fun publicFunc() {}
+
 access(contract) fun contractFunc() {}
 
 ***Area 3***
+
 Read & Write (varibles):
+
 pub(set) var a: String
 
 Read Only (varibles):
+
 pub var b: String
+
 access(contract) var c: String
 
 Call functions:
+
 pub fun publicFunc() {}
+
 access(contract) fun contractFunc() {}
 
 ***Area 4***
+
 Read Only (varibles):
+
 pub(set) var a: String
+
 pub var b: String
 
 Call function:
+
 pub fun publicFunc() {}
