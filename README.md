@@ -324,14 +324,9 @@ Idea #2: If we want to read information about our NFTs inside our Collection, ri
 
 It's never good because it's not safe. We should use borrow function to get a reference to the NFT so that it'd stay in our Collection yet public can read information about it.
 
+Chapter 4 Day 4 Creating an NFT Contract: Transferring, Minting, and Borrowing (Part 2/3)
 
-
-
-
-
-
-
-
+Take our NFT contract so far and add comments to every single resource or function explaining what it's doing in your own words. Something like this:
 
 ```swift
 pub contract CryptoPoops {
@@ -355,30 +350,37 @@ pub contract CryptoPoops {
     }
   }
 
-  // This is a resource interface that allows us to... you get the point.
+  // This is a resource interface that allows us to expose a deposit, a getIDs and a borrowNFT function to the public
+  // and restrict certain parts of the NFT Collection like withdraw function to the public.
   pub resource interface CollectionPublic {
     pub fun deposit(token: @NFT)
     pub fun getIDs(): [UInt64]
     pub fun borrowNFT(id: UInt64): &NFT
   }
-
+  
+  // This is an Collection resource that implements a resource interface CollectionPublic, in which contains a dictionary that maps an id to the NFT with that id, and five functions(deposit, withdraw, getIDs, borrowNFT, destroy).
   pub resource Collection: CollectionPublic {
-    pub var ownedNFTs: @{UInt64: NFT}
-
+   pub var ownedNFTs: @{UInt64: NFT}
+    
+    // This deposit function allows everyone to add NFTs to the Collection.
     pub fun deposit(token: @NFT) {
       self.ownedNFTs[token.id] <-! token
     }
 
+    // This withdraw function allows account owner to remove NFTs from the Collection.
+    // An error message would be shown if the NFT is not in the account.
     pub fun withdraw(withdrawID: UInt64): @NFT {
       let nft <- self.ownedNFTs.remove(key: withdrawID) 
               ?? panic("This NFT does not exist in this Collection.")
       return <- nft
     }
 
+    // This getIDs function allows everyone to get an array of all the NFT ids in the Collection either by a transaction or script.
     pub fun getIDs(): [UInt64] {
       return self.ownedNFTs.keys
     }
 
+    // This borrowNFT function allows everyone to get a reference to the NFT without taking it out of the Collection.
     pub fun borrowNFT(id: UInt64): &NFT {
       return &self.ownedNFTs[id] as &NFT
     }
@@ -387,15 +389,19 @@ pub contract CryptoPoops {
       self.ownedNFTs <- {}
     }
 
+    // This destroy function allows account owner to manually destroy the nested resources.
     destroy() {
       destroy self.ownedNFTs
     }
   }
 
+// This is a function that can create new Collection for better management of NFT.
   pub fun createEmptyCollection(): @Collection {
     return <- create Collection()
   }
 
+// This is a Minter resource that contains the createNFT function, which only allows people holding Minter resource can mint the NFT.
+// This Minter resource also contains the createMinter function that it's possible for people holding Minter resource to create another Minter resource in order to pass the ability of minting the NFT.
   pub resource Minter {
 
     pub fun createNFT(name: String, favouriteFood: String, luckyNumber: Int): @NFT {
@@ -407,9 +413,12 @@ pub contract CryptoPoops {
     }
 
   }
-
+    
   init() {
     self.totalSupply = 0
+    
+    // This line of code is very important. Without it, no one would have Minter resource in the first place to be able to mint NFT or mint another Minter resource.
+    // It automatically saves the Minter resource to the contract deployer's account storage when this contract is deployed. 
     self.account.save(<- create Minter(), to: /storage/Minter)
   }
 }
