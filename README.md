@@ -333,7 +333,7 @@ It's never good because it's not safe. We should use borrow function to get a re
 
 
 
-```
+```swift
 pub contract CryptoPoops {
   pub var totalSupply: UInt64
 
