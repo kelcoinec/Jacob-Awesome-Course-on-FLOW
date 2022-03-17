@@ -225,3 +225,48 @@ pub var b: String
 Call function:
 
 pub fun publicFunc() {}
+
+Chapter 4 Day 1 Account Storage
+
+1. Explain what lives inside of an account.
+ 
+i. Contract Code which all contracts we deploy lives inside of an account.
+ii. Account Storage which all data we store lives inside of an account.
+
+2. What is the difference between the /storage/, /public/, and /private/ paths?
+
+They are different with aspect to the level of access control:
+
+/storage/ is the path which only account owner can access to
+
+/public/ is the path which everyone can access to
+
+/private/ is the path which account owner and people granted access by account owner can access to
+
+3. What does .save() do? What does .load() do? What does .borrow() do?
+
+.save() stores data in an account /storage/
+
+.load() gets data out of an account /storage/, returns an optional
+
+.borrow() gets a reference to the resource in an account /storage/, but not the resource itself
+
+4. Explain why we couldn't save something to our account storage inside of a script.
+
+Firstly, a script can only view the data instead of modifying the data(like saving something to an account storage) on blockchain; 
+
+Secondly, we need AuthAccount to access to the account storage where AuthAccount can only be retrieved in the prepare phase of a transaction(not script).
+
+5. Explain why I couldn't save something to your account.
+
+It's because I'm too smart not to grant you any access to my AuthAccount which is required to store data under my account storage in a signed transaction.
+
+6. Define a contract that returns a resource that has at least 1 field in it. Then, write 2 transactions:
+
+i. A transaction that first saves the resource to account storage, then loads it out of account storage, logs a field inside the resource, and destroys it.
+
+
+
+ii. A transaction that first saves the resource to account storage, then borrows a reference to it, and logs a field inside the resource.
+
+
