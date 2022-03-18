@@ -423,3 +423,15 @@ pub contract CryptoPoops {
   }
 }
 ```
+
+Chapter 5 Day 1 Pre/Post Conditions& Events
+
+1. Describe what an event is, and why it might be useful to a client.
+
+An event is a way for a smart contract to commumicate to the outside world that something happened inside the contract on chain. It might be useful to clients that they can know something happened inside the contract without checking the contract on chain and update their code accordingly. We can use third party tools like Graffle to listen and emit events.
+
+2. Deploy a contract with an event in it, and emit the event somewhere else in the contract indicating that it happened.
+
+3. Using the contract in step 2), add some pre conditions and post conditions to your contract to get used to writing them out.
+
+4. For each of the functions below (numberOne, numberTwo, numberThree), follow the instructions.
