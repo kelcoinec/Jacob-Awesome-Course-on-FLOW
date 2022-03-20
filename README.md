@@ -776,3 +776,18 @@ pub fun main(address: Address): [UInt64] {
 ```
 
 Read the metadata of the NFT
+
+```swift
+import CryptoPoops from 0x01
+
+pub fun main(address: Address, id: UInt64) {
+  let collectionRef = getAccount(address).getCapability<&CryptoPoops.Collection{CryptoPoops.ICollection}>(/public/CryptoPoopsCollection).borrow()
+                                ?? panic ("No Collection Ref is borrowed.")
+  
+  let nftData = collectionRef.borrowAuthNFT(id: id)
+  
+  log(nftData.name)
+  log(nftData.favouriteFood)
+  log(nftData.luckyNumber)
+}
+```
