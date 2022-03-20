@@ -746,6 +746,7 @@ transaction(address: Address, name: String, favouriteFood: String, luckyNumber: 
 
         let collectionRef = getAccount(address).getCapability<&CryptoPoops.Collection{CryptoPoops.ICollection}>(/public/CryptoPoopsCollection).borrow()
                                 ?? panic ("No Collection Ref is borrowed.")
+                                
         let nft <- minter.createNFT(name: name, favouriteFood: favouriteFood, luckyNumber: luckyNumber)
 
         collectionRef.deposit(token: <- nft)
