@@ -448,3 +448,71 @@ numberTwo: Yes, it will return "Jacob Tucker" as the length of the name "Jacob" 
 numberThree: 
 
 No, it will not log the updated number because the post condition isn't satisfied. It says "after the numberThree function is run, make sure that the updated number is 1 lesser than the value it was before this function was run.", which is always false in this case. Thus, the program will abort and the value will remain as the initial value 0.
+
+Chapter 5 Day 2 Contract Interfaces
+
+1. Explain why standards can be beneficial to the Flow ecosystem.
+
+Developing standards would make developers easer to learn and more efficient to use in different scenarios. In a world with considerable NFTs, it is helpful so clients like a Marketplace DApp can understand what they're looking at, and most importantly, not have to implement different functionality for every NFT contract. Instead, a client using multiple contracts can have a singular way of interacting with all of those contracts. 
+
+2. What is YOUR favourite food?
+
+Sashimi Sashimi Sashimi
+
+3. Please fix this code (Hint: There are two things wrong):
+
+The contract interface:
+
+```swift
+pub contract interface ITest {
+  pub var number: Int
+  
+  pub fun updateNumber(newNumber: Int) {
+    pre {
+      newNumber >= 0: "We don't like negative numbers for some reason. We're mean."
+    }
+    post {
+      self.number == newNumber: "Didn't update the number to be the new number."
+    }
+  }
+
+  pub resource interface IStuff {
+    pub var favouriteActivity: String
+  }
+
+  pub resource Stuff {
+    pub var favouriteActivity: String
+  }
+}
+```
+
+The implementing contract:
+```swift
+// 1st: We need to implement the contract interface ITest
+pub contract Test: ITest {
+  pub var number: Int
+  
+  // 2nd: self.number should be set to neNumber?
+  pub fun updateNumber(newNumber: Int) {
+    self.number = 5
+  }
+  
+  // 3rd: The resource interface IStuff could be deleted because the implementing contract does not have to implement this inside the contract.
+  pub resource interface IStuff {
+    pub var favouriteActivity: String
+  }
+
+  // 4th: We need to change the name of the resource interface from IStuff to ITest.IStuff
+  pub resource Stuff: ITest.IStuff {
+    pub var favouriteActivity: String
+
+    init() {
+      self.favouriteActivity = "Playing League of Legends."
+    }
+  }
+
+  init() {
+    self.number = 0
+  }
+}
+```
