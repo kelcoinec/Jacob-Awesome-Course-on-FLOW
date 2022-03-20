@@ -437,8 +437,7 @@ An event is a way for a smart contract to commumicate to the outside world that 
 
 3. Using the contract in step 2), add some pre conditions and post conditions to your contract to get used to writing them out.
 
-<img width="1103" alt="CH5D1Q3" src="https://user-images.githubusercontent.com/99885292/159152722-14b3ea7c-993c-4c44-b592-716478fec037.png">
-
+<img width="1114" alt="CH5D1Q3" src="https://user-images.githubusercontent.com/99885292/159152911-c2b56dd9-d534-44a1-8efb-f93fa6d7defd.png">
 
 4. For each of the functions below (numberOne, numberTwo, numberThree), follow the instructions.
 
