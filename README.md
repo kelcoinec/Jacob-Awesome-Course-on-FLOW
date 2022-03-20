@@ -432,7 +432,13 @@ An event is a way for a smart contract to commumicate to the outside world that 
 
 2. Deploy a contract with an event in it, and emit the event somewhere else in the contract indicating that it happened.
 
+<img width="1113" alt="CH5D1Q2" src="https://user-images.githubusercontent.com/99885292/159152712-41b72960-d962-4b7b-80cf-4741583ee849.png">
+
+
 3. Using the contract in step 2), add some pre conditions and post conditions to your contract to get used to writing them out.
+
+<img width="1103" alt="CH5D1Q3" src="https://user-images.githubusercontent.com/99885292/159152722-14b3ea7c-993c-4c44-b592-716478fec037.png">
+
 
 4. For each of the functions below (numberOne, numberTwo, numberThree), follow the instructions.
 
