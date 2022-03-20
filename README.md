@@ -642,7 +642,11 @@ pub contract CryptoPoops: NonFungibleToken {
     }
   }
 
+  // Added a resource interface to make below functions publicly accessible.
   pub resource interface CollectionPublic {
+    pub fun deposit(token: @NonFungibleToken.NFT)
+    pub fun getIDs(): [UInt64]
+    pub fun borrowNFT(id: UInt64): &NonFungibleToken.NFT
     pub fun borrowAuthNFT(id: UInt64): &NFT
   }
 
@@ -670,6 +674,7 @@ pub contract CryptoPoops: NonFungibleToken {
       return &self.ownedNFTs[id] as &NonFungibleToken.NFT
     }
 
+    // Added a borrowAuthNFT function and put it in the above resource interface so that public can read out NFT's metadata.
     pub fun borrowAuthNFT(id: UInt64): &NFT {
       let ref = &self.ownedNFTs[id] as auth &NonFungibleToken.NFT
       return ref as! &NFT
