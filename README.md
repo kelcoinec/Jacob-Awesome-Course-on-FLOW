@@ -643,7 +643,7 @@ pub contract CryptoPoops: NonFungibleToken {
   }
 
   // Added a resource interface to make below functions publicly accessible.
-  pub resource interface CollectionPublic {
+  pub resource interface ICollection {
     pub fun deposit(token: @NonFungibleToken.NFT)
     pub fun getIDs(): [UInt64]
     pub fun borrowNFT(id: UInt64): &NonFungibleToken.NFT
@@ -651,7 +651,7 @@ pub contract CryptoPoops: NonFungibleToken {
   }
 
   // Implemented the resource interface CollectionPublic to the resource Collection.
-  pub resource Collection: CollectionPublic, NonFungibleToken.Provider, NonFungibleToken.Receiver, NonFungibleToken.CollectionPublic {
+  pub resource Collection: ICollection, NonFungibleToken.Provider, NonFungibleToken.Receiver, NonFungibleToken.CollectionPublic {
     pub var ownedNFTs: @{UInt64: NonFungibleToken.NFT}
 
     pub fun withdraw(withdrawID: UInt64): @NonFungibleToken.NFT {
@@ -725,7 +725,7 @@ transaction {
 
   prepare(acct: AuthAccount) {
   acct.save(<- CryptoPoops.createEmptyCollection(), to: /storage/CryptoPoopsCollection)
-  acct.link<&CryptoPoops.Collection{CryptoPoops.CollectionPublic}>(/public/CryptoPoopsCollection, target: /storage/CryptoPoopsCollection)
+  acct.link<&CryptoPoops.Collection{CryptoPoops.ICollection}>(/public/CryptoPoopsCollection, target: /storage/CryptoPoopsCollection)
   }
 
   execute {
