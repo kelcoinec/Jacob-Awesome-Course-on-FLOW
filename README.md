@@ -435,3 +435,11 @@ An event is a way for a smart contract to commumicate to the outside world that 
 3. Using the contract in step 2), add some pre conditions and post conditions to your contract to get used to writing them out.
 
 4. For each of the functions below (numberOne, numberTwo, numberThree), follow the instructions.
+
+numberOne: Yes, it will log the name "Jacob" as the length of the name "Jacob" is equal to 5.
+
+numberTwo: Yes, it will return "Jacob Tucker" as the length of the name "Jacob" is greater than 0 (pre condition) and the last name "Tucker" will be concatenated after the first name "Jacob" (post condition).
+
+numberThree: 
+
+No, it will not log the updated number because the post condition isn't satisfied. It says "after the numberThree function is run, make sure that the updated number is 1 lesser than the value it was before this function was run." Which is always false in this case.
