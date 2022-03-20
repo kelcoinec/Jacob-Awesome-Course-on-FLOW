@@ -442,4 +442,4 @@ numberTwo: Yes, it will return "Jacob Tucker" as the length of the name "Jacob" 
 
 numberThree: 
 
-No, it will not log the updated number because the post condition isn't satisfied. It says "after the numberThree function is run, make sure that the updated number is 1 lesser than the value it was before this function was run.", which is always false in this case. And the program will abort and the value got reset back to the initial value 0.
+No, it will not log the updated number because the post condition isn't satisfied. It says "after the numberThree function is run, make sure that the updated number is 1 lesser than the value it was before this function was run.", which is always false in this case. Thus, the program will abort and the value will remain as the initial value 0.
