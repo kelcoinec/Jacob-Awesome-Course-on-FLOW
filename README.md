@@ -717,6 +717,22 @@ You will have to write all the transactions to set up the accounts, mint the NFT
 
 1. Set up the account
 
+```swift
+import CryptoPoops from 0x01
+import NonFugibleToken from 0x02
+
+transaction {
+
+  prepare(acct: AuthAccount) {
+  acct.save(<- CryptoPoops.createEmptyCollection(), to: /storage/CryptoPoopsCollection)
+  acct.link<&CryptoPoops.NFT{CryptoPoops.CollectionPublic}>(/public/CryptoPoopsCollection, target: /storage/CryptoPoopsCollection)
+  }
+
+  execute {
+    
+  }
+}
+```
 
 2. Mint the NFTs
 
