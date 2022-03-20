@@ -734,7 +734,7 @@ transaction {
 }
 ```
 
-2. Mint the NFTs
+2. Mint the NFT
 
 ```swift
 import CryptoPoops from 0x01
@@ -762,3 +762,17 @@ transaction(address: Address, name: String, favouriteFood: String, luckyNumber: 
 
 
 3. Run the scripts
+
+Read all the IDs
+```swift
+import CryptoPoops from 0x01
+
+pub fun main(address: Address): [UInt64] {
+  let collectionRef = getAccount(address).getCapability<&CryptoPoops.Collection{CryptoPoops.ICollection}>(/public/CryptoPoopsCollection).borrow()
+                                ?? panic ("No Collection Ref is borrowed.")
+  
+  return collectionRef.getIDs()
+}
+```
+
+Read the metadata of the NFT
