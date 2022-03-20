@@ -736,5 +736,28 @@ transaction {
 
 2. Mint the NFTs
 
+```swift
+import CryptoPoops from 0x01
+
+transaction(address: Address, name: String, favouriteFood: String, luckyNumber: Int) {
+    prepare(acct: AuthAccount) {
+        let minter = acct.borrow<&CryptoPoops.Minter>(from: /storage/Minter)
+                            ?? panic ("No Minter is borrowed.")
+
+        let collectionRef = getAccount(address).getCapability<&CryptoPoops.Collection{CryptoPoops.ICollection}>(/public/CryptoPoopsCollection).borrow()
+                                ?? panic ("No Collection Ref is borrowed.")
+        let nft <- minter.createNFT(name: name, favouriteFood: favouriteFood, luckyNumber: luckyNumber)
+
+        collectionRef.deposit(token: <- nft)
+    }
+
+    execute {
+
+        log("NFT minted to Collection")
+
+    }
+}
+```
+
 
 3. Run the scripts
