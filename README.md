@@ -520,3 +520,18 @@ pub contract Test: ITest {
   }
 }
 ```
+
+Chapter 5 Day 3 Creating an NFT Contract: Implementing the NonFungibleToken Standard (Part 3/3)
+
+1. What does "force casting" with as! do? Why is it useful in our Collection?
+
+We use "force casting" with operator as! to change and specify the type of the resource we want to deal with. Since any NFT on Flow all fit the @NonFungibleToken.NFT type, if we want to deposit a specific type like @NFT in our Collection, we have to use the "force casting" with operator as! to "downcast" the generic type(@NonFungibleToken.NFT) to be a more specific type(@NFT). Therefore, we can make sure that people can only deposit @NFT into our Collection and if it's not @NFT, panic and abort the program.
+
+2. What does auth do? When do we use it?
+
+```auth``` would let us get an authorized reference to a resource. If we want to downcast the type of a reference, we must have an auth reference by putting ```auth``` in front of a more generic type of reference. 
+
+3. This last quest will be your most difficult yet. Take this contract and add a function called borrowAuthNFT just like we did in the section called "The Problem" above. Then, find a way to make it publically accessible to other people so they can read our NFT's metadata. Then, run a script to display the NFTs metadata for a certain id.
+
+You will have to write all the transactions to set up the accounts, mint the NFTs, and then the scripts to read the NFT's metadata. 
+
