@@ -453,7 +453,11 @@ Chapter 5 Day 2 Contract Interfaces
 
 1. Explain why standards can be beneficial to the Flow ecosystem.
 
-Developing standards would make developers easer to learn and more efficient to use in different scenarios. In a world with considerable NFTs, it is helpful so clients like a Marketplace DApp can understand what they're looking at, and most importantly, not have to implement different functionality for every NFT contract. Instead, a client using multiple contracts can have a singular way of interacting with all of those contracts. 
+Developing standards would make developers easier to learn and more efficient to use in different scenarios. 
+
+With standard applied, the consistency of certain requirements across different contracts could be expected that developers might save a lot of time in reading codes of different projects and fix them when needed. 
+
+In a world with considerable NFTs, it is helpful so clients like a Marketplace DApp can understand what they're looking at, and most importantly, not have to implement different functionality for every NFT contract. Instead, a client using multiple contracts can have a singular way of interacting with all of those contracts. 
 
 2. What is YOUR favourite food?
 
