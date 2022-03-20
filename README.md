@@ -650,6 +650,7 @@ pub contract CryptoPoops: NonFungibleToken {
     pub fun borrowAuthNFT(id: UInt64): &NFT
   }
 
+  // Implemented the resource interface CollectionPublic to the resource Collection.
   pub resource Collection: CollectionPublic, NonFungibleToken.Provider, NonFungibleToken.Receiver, NonFungibleToken.CollectionPublic {
     pub var ownedNFTs: @{UInt64: NonFungibleToken.NFT}
 
